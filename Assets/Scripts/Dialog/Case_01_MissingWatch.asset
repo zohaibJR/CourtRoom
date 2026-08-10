@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccc0db449d9073499e9a587dc765e08, type: 3}
+  m_Name: Case_01_MissingWatch
+  m_EditorClassIdentifier: Assembly-CSharp::CaseData
+  caseName: The Missing Watch
+  caseDescription: A watch went missing from an office. Michael is accused of stealing
+    it
+  correctVerdict: 1
+  accusedList:
+  - characterName: Michael
+    lines:
+    - speakerName: Michael
+      text: I didn't steal it. I went into the office because the lawyer asked me
+        to get a document.
+  accuserList:
+  - characterName: Robert
+    lines:
+    - speakerName: Robert
+      text: My watch disappeared from my office yesterday. I saw Michael near my
+        desk.
+  witnessList:
+  - characterName: Sarah
+    lines:
+    - speakerName: Sarah
+      text: I saw Michael leaving the office around that time.
+  evidence:
+  - evidenceId: watch
+    evidenceName: The Watch
+    description: The missing watch was found in Michael's bag.
+  - evidenceId: document
+    evidenceName: Signed Document
+    description: The lawyer confirms Michael was asked to enter the office to retrieve
+      this document.

@@ -8,6 +8,11 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+        {
+            return; // dialogue manager handles Space/E itself while open
+        }
+
         CheckForInteraction();
     }
 

@@ -81,7 +81,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
-  canJump: 1
+  canJump: 0
   canSprint: 1
 --- !u!114 &8758352212984786225
 MonoBehaviour:

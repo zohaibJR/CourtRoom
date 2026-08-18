@@ -1,3 +1,4 @@
+//Attached on Empty Object
 using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour

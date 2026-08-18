@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class CaseSpawner : MonoBehaviour
@@ -22,7 +22,6 @@ public class CaseSpawner : MonoBehaviour
 
     private List<GameObject> spawned = new List<GameObject>();
 
-    // --- Case flow tracking ---
     private List<CharacterRole> flowOrder = new List<CharacterRole>()
     {
         CharacterRole.Accuser,
@@ -30,6 +29,9 @@ public class CaseSpawner : MonoBehaviour
         CharacterRole.Witness
     };
     private int currentFlowStep = 0;
+
+    // ← NEW: exposed so VerdictManager can check this
+    public bool IsFlowComplete => currentFlowStep >= flowOrder.Count;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class CaseSpawner : MonoBehaviour
         Debug.Log("Started Case: " + caseData.caseName);
         currentFlowStep = 0;
         SpawnCase(caseData);
+        EvidenceSpawner.Instance.SpawnEvidence(caseData);
         AnnounceCurrentStep();
     }
 
@@ -102,8 +105,6 @@ public class CaseSpawner : MonoBehaviour
         spawned.Clear();
     }
 
-    // --- Flow logic ---
-
     private void AnnounceCurrentStep()
     {
         if (currentFlowStep >= flowOrder.Count)
@@ -115,7 +116,6 @@ public class CaseSpawner : MonoBehaviour
         Debug.Log("Go talk to the " + flowOrder[currentFlowStep]);
     }
 
-    // Called by NPCDialogueTrigger when the player finishes talking to someone
     public void ReportInteraction(CharacterRole role)
     {
         if (currentFlowStep >= flowOrder.Count)

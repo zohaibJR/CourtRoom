@@ -1,3 +1,5 @@
+//Attached on Player
+
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
@@ -8,9 +10,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
+        bool dialogueOpen = DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive;
+        bool evidenceOpen = EvidencePanelManager.Instance != null && EvidencePanelManager.Instance.IsPanelActive;
+
+        if (dialogueOpen || evidenceOpen)
         {
-            return; // dialogue manager handles Space/E itself while open
+            return;
         }
 
         CheckForInteraction();

@@ -37,7 +37,9 @@ MonoBehaviour:
   - evidenceId: watch
     evidenceName: The Watch
     description: The missing watch was found in Michael's bag.
+    evidencePrefab: {fileID: 3161286042075904976, guid: ddf96f8f368c02c48895abf10cd4f766, type: 3}
   - evidenceId: document
     evidenceName: Signed Document
     description: The lawyer confirms Michael was asked to enter the office to retrieve
       this document.
+    evidencePrefab: {fileID: 6550275735552713129, guid: 8b5a7e70285ec9e428187e1231a41d44, type: 3}
